@@ -14,13 +14,91 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-light: 'Euclid Circular A Light';
+    --font-regular: 'Euclid Circular A Regular';
+    --font-medium: 'Euclid Circular A Medium';
+    --font-semibold: 'Euclid Circular A SemiBold';
+    --font-quentin: 'Quentin';
+    --font-meno: 'MenoBannerCondensed-Regular';
+    
   }
+
+  @font-face {
+    font-family: 'Euclid Circular A Light';
+    src: url('/fonts/Euclid-Circular-A-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Euclid Circular A Regular';
+    src: url('/fonts/Euclid-Circular-A-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Euclid Circular A Medium';
+    src: url('/fonts/Euclid-Circular-A-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Euclid Circular A SemiBold';
+    src: url('/fonts/Euclid-Circular-A-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+   @font-face {
+    font-family: 'Quentin';
+    src: url('/fonts/Quentin.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+   @font-face {
+    font-family: 'MenoBannerCondensed-Regular';
+    src: url('/fonts/MenoBannerCondensed-Regular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+   
+  
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-regular);
+}
+
+.font-light {
+  font-family: var(--font-light);
+}
+.font-regular {
+  font-family: var(--font-regular);
+}
+.font-medium {
+  font-family: var(--font-medium);
+}
+.font-semibold {
+  font-family: var(--font-semibold);
+}
+.font-quentin {
+  font-family: var(--font-quentin);
+}
+.font-meno {
+  font-family: var(--font-meno);
+}
+
+
+::-webkit-scrollbar{
+  width: 5px;
+  height: 6px;
+  
+}
+
+
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
 }
