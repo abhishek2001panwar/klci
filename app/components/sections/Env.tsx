@@ -18,21 +18,21 @@ function useWindowWidth() {
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80",
+    src: "/env.avif",
     alt: "Forest landscape",
     label: "Biodiversity",
     desc: "KLCI has a Sustainability Development Unit in place, to champion the ethos prescribed by the Sustainable Development Framework for mines in India. In keeping with the framework, KLCI operates with cognizance of social and environmental responsibility.",
     isMain: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
+    src: "/env1.avif",
     alt: "Solar energy",
     label: "Clean Energy",
     desc: "Transitioning to renewable energy sources to reduce our carbon footprint.",
     isMain: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
+    src: "/env2.avif",
     alt: "Water conservation",
     label: "Water Stewardship",
     desc: "Responsible water management and conservation in all operations.",

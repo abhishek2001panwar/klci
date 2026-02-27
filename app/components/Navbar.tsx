@@ -44,6 +44,7 @@ function Navbar() {
   }, []);
 
   return (
+    <>
     <nav
       className={`w-full fixed top-0 z-50 transition-all duration-300 ${
         scrolled
@@ -64,7 +65,7 @@ function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`text-base  uppercase tracking-wide font-light transition-colors ${scrolled ? 'text-gray-900 hover:text-blue-700' : 'text-white hover:opacity-70'}`}
+                  className={`text-base  uppercase tracking-wide font-light transition-colors ${scrolled ? 'text-gray-900 hover:text-blue-700' : 'text-black hover:opacity-70'}`}
                 >
                   {link.label}
                 </a>
@@ -98,31 +99,25 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Overlay for menu drawer */}
+    </nav>
+
+      {/* Overlay for menu drawer — outside <nav> so backdrop-blur doesn't trap it */}
       <div
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-200 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black/40 z-[9998] transition-opacity duration-200 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={() => setMenuOpen(false)}
         aria-hidden={!menuOpen}
       />
-      {/* Menu Drawer (right, half width, always available) */}
+      {/* Menu Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-1/2 bg-white/70 backdrop-blur-xl z-50 shadow-2xl pt-8 px-4 flex flex-col transition-transform duration-300 border-l border-gray-200 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-full md:w-1/2 bg-white/70 backdrop-blur-xl z-[9999] shadow-2xl pt-8 px-4 flex flex-col transition-transform duration-300 border-l border-gray-200 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
         style={{ fontFamily: 'var(--font-euclid-regular)' }}
       >
         <div className="mb-8 flex items-center justify-between">
           <Link href="/" className="font-semibold text-2xl font-euclid-semibold tracking-wide"></Link>
           <button onClick={() => setMenuOpen(false)} className="w-10 h-10 flex items-center justify-center relative group focus:outline-none">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 8L28 28" stroke="#222" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'url(#rough1)' }} />
-              <path d="M28 8L8 28" stroke="#222" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'url(#rough2)' }} />
-              <filter id="rough1">
-                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="turb"/>
-                <feDisplacementMap in2="turb" in="SourceGraphic" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
-              </filter>
-              <filter id="rough2">
-                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="turb"/>
-                <feDisplacementMap in2="turb" in="SourceGraphic" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
-              </filter>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="6" y1="6" x2="26" y2="26" stroke="#222" strokeWidth="2" strokeLinecap="round"/>
+              <line x1="26" y1="6" x2="6" y2="26" stroke="#222" strokeWidth="2" strokeLinecap="round"/>
             </svg>
           </button>
         </div>
@@ -169,7 +164,7 @@ function Navbar() {
           <a href="#" aria-label="YouTube" className="text-2xl text-gray-900 hover:text-gray-600"><FaYoutube /></a>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
 

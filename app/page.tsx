@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import About from "./components/sections/About";
+import Cta from "./components/sections/Cta";
 import Env from "./components/sections/Env";
+import Footer from "./components/sections/Footer";
 import Gallery from "./components/sections/Gallery";
 import Hero from "./components/sections/Hero";
 import Intro from "./components/sections/Intro";
@@ -20,6 +22,9 @@ export default function Home() {
       <Product />
       <Gallery />
       <Env />
+      <Mission />
+      <Cta />
+      <Footer />
      
     </div>
   );
