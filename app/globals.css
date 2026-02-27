@@ -19,7 +19,7 @@
     --font-medium: 'Euclid Circular A Medium';
     --font-semibold: 'Euclid Circular A SemiBold';
     --font-quentin: 'Quentin';
-    --font-meno: 'MenoBannerCondensed-Regular';
+    --font-meno: 'MenoBannerCondensed-Regular', 'playfair display';
     
   }
 
@@ -91,14 +91,8 @@ body {
 
 
 ::-webkit-scrollbar{
-  width: 5px;
-  height: 6px;
+  width: 1px;
+  
   
 }
 
-
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
