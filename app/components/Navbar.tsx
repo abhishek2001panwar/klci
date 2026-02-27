@@ -51,7 +51,7 @@ function Navbar() {
           : "bg-transparent border-none"
       }`}
     >
-      <div className="max-w-screen-2xl mx-10 flex items-center px-2" style={{ minHeight: '80px' }}>
+      <div className="max-w-screen-2xl mx-auto md:mx-10 flex items-center px-2" style={{ minHeight: '80px' }}>
         {/* Logo left */}
         <Link href="/" className="font-quentin text-xl tracking-tight text-gray-900 flex-shrink-0">
           <Image src="/favicon.ico" alt="KLCI Logo" width={82} height={82} className="mr-2" />

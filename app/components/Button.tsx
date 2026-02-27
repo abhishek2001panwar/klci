@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
 	const outline =
 		"bg-transparent border border-black text-black hover:bg-black hover:text-white";
 	const solid =
-		"bg-[#d1cabd] border border-[#d1cabd] text-black hover:bg-black hover:text-white";
+		"bg-[#d1cabd] border border-[#d1cabd] text-black ";
 
 	const variantClass = variant === "solid" ? solid : outline;
 
