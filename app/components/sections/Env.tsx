@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
+import Button from "../Button";
 
 function useWindowWidth() {
   const [width, setWidth] = useState(
@@ -13,29 +14,7 @@ function useWindowWidth() {
   return width;
 }
 
-function Button({
-  children,
-  variant = "outline",
-  className = "",
-  onClick,
-  type = "button",
-  dark = false,
-}) {
-  const base =
-    "px-6 py-2.5 text-xs tracking-widest uppercase transition-colors duration-300 focus:outline-none";
-  const outline = dark
-    ? "bg-transparent border border-white text-white hover:bg-white hover:text-black"
-    : "bg-transparent border border-black text-black hover:bg-black hover:text-white";
-  const solid =
-    "bg-[#d1cabd] border border-[#d1cabd] text-black hover:bg-transparent hover:text-[#d1cabd]";
-  const variantClass = variant === "solid" ? solid : outline;
 
-  return (
-    <button type={type} onClick={onClick} className={`${base} ${variantClass} ${className}`}>
-      {children}
-    </button>
-  );
-}
 
 const images = [
   {
@@ -147,7 +126,7 @@ function Env() {
         >
           Our Environmental Commitment
         </p>
-        <Button variant="outline" dark={inView}>
+        <Button variant="outline" >
           View All
         </Button>
       </div>
@@ -281,7 +260,7 @@ function Env() {
               {/* Learn More only on first card */}
               {img.isMain && (
                 <div style={{ marginTop: "6px" }}>
-                  <Button variant="outline" dark={inView}>
+                  <Button variant="outline" >
                     Learn More
                   </Button>
                 </div>
