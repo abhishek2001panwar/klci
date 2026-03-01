@@ -30,15 +30,17 @@ const Footer = () => {
           <div className="border-t border-white/20 mb-4 w-full" />
           <ul className="space-y-1 mt-4 py-3">
             {[
-              { label: "ABOUT US", href: "/about" },
-              { label: "MANUFACTURING PROCESS", href: "/manufacturing" },
-              { label: "QUALITY & CERTIFICATIONS", href: "/quality" },
-              { label: "SUSTAINABILITY", href: "/sustainability" },
-              { label: "MEDIA & NEWS", href: "/media" },
-              { label: "CONTACT US", href: "/contact" },
+             
+  { label: "Established in India"},
+  { label: "Responsible Mining Practices" },
+  { label: "Community-Centric Growth" },
+  { label: "Environment First Approach" },
+  { label: "Safety & Compliance Driven" },
+ 
+
             ].map(link => (
-              <li key={link.label} className="py-0.5">
-                <a href={link.href} className="uppercase text-[10px] md:text-xs tracking-widest font-medium hover:text-[#d1cabd] transition-colors">{link.label}</a>
+              <li key={link.label} className="py-1">
+                <p className="uppercase text-[10px] md:text-xs tracking-widest font-medium hover:text-[#d1cabd] transition-colors">{link.label}</p>
               </li>
             ))}
           </ul>

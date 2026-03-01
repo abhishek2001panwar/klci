@@ -18,16 +18,21 @@ const mainMenuLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+
+
+
+
+
 const secondaryLinks = [
   [
-    { label: "ABOUT US", href: "/about" },
-    { label: "MANUFACTURING PROCESS", href: "/manufacturing" },
-    { label: "QUALITY & CERTIFICATIONS", href: "/quality" },
+    { label: "ABOUT US"  },
+    { label: "Responsible Mining Practices"},
+    { label: "Community-Centric Growth" },
   ],
   [
-    { label: "SUSTAINABILITY", href: "/sustainability" },
-    { label: "CAREERS", href: "/careers" },
-    { label: "MEDIA & NEWS", href: "/media" },
+    { label: "SUSTAINABILITY" },
+    { label: "Environment First Approach" },
+    { label: "Safety & Compliance Driven"},
   ],
 ];
 
@@ -84,8 +89,8 @@ function Navbar() {
             {/* Hamburger icon (2 bars, one shorter) */}
               {!menuOpen && (
                 <span className="block">
-                  <span className={`block h-0.5 w-10 rounded transition-all duration-200 mb-2 ${scrolled ? 'bg-gray-900' : 'bg-white'}`}></span>
-                  <span className={`block h-0.5 w-10 rounded transition-all duration-200 ml-0 ${scrolled ? 'bg-gray-900' : 'bg-white'}`}></span>
+                  <span className={`block h-0.5 w-10 rounded transition-all duration-200 mb-2 ${scrolled ? 'bg-gray-900' : 'bg-black'}`}></span>
+                  <span className={`block h-0.5 w-10 rounded transition-all duration-200 ml-0 ${scrolled ? 'bg-gray-900' : 'bg-black'}`}></span>
                 </span>
               )}
             {/* Cross icon */}
@@ -144,14 +149,14 @@ function Navbar() {
           {secondaryLinks.map((col, i) => (
             <div key={i} className="flex flex-col gap-2">
               {col.map(link => (
-                <a
+                <p
                   key={link.label}
-                  href={link.href}
+                  
                   className="block text-xs font-medium tracking-widest uppercase text-gray-900 py-1 px-1 hover:underline"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </p>
               ))}
             </div>
           ))}

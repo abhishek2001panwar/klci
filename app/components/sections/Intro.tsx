@@ -47,7 +47,7 @@ export default function Intro() {
         <div className="flex flex-col gap-8">
           <div>
             <div className="text-xs font-medium tracking-widest uppercase mb-4 text-gray-700 ">
-              FAMILY BUILT, WITH HEART.
+             RESPONSIBLE MINING. SUSTAINABLE FUTURE.
             </div>
             <blockquote className="font-meno text-xl md:text-3xl text-gray-800 italic leading-snug">
               “KLCI Karnataka Limpo Cement Industry (KLCI) is an iron-ore,

@@ -13,7 +13,7 @@ import Scale from "./components/sections/Scale";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      
       <Hero />
 
       <Intro />
@@ -24,7 +24,7 @@ export default function Home() {
       <Env />
       <Mission />
       <Cta />
-      <Footer />
+      
      
     </div>
   );

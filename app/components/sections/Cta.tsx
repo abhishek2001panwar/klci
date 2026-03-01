@@ -23,7 +23,7 @@ const Cta = () => {
   };
 
   return (
-    <section className="w-full bg-white py-12 px-2 md:px-8">
+    <section className="w-full bg-[#f9f7f3] py-12 px-2 md:px-8">
       <form
         onSubmit={handleSubmit}
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
