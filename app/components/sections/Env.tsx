@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import Button from "../Button";
-import { useRouter } from "next/navigation";
 
 const images = [
   {
@@ -30,8 +30,6 @@ const images = [
 function Env() {
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
-
-const router = useRouter();
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
@@ -61,13 +59,14 @@ const router = useRouter();
         >
           Our Environmental Commitment
         </p>
-        <Button 
-          variant="outline" 
-          onClick={() => router.push("/environmental-care")}
-          className={inView ? "border-white text-white " : ""}
-        >
-          View All
-        </Button>
+        <Link href="/environmental-care" prefetch={true}>
+          <Button 
+            variant="outline"
+            className={inView ? "border-white text-white " : ""}
+          >
+            View All
+          </Button>
+        </Link>
       </div>
 
       {/* Big heading */}

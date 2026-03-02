@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
@@ -19,7 +20,7 @@ const Footer = () => {
               { label: "CAREERS", href: "/careers" },
             ].map(link => (
               <li key={link.label} className="py-0.5">
-                <a href={link.href} className="uppercase text-[10px] md:text-xs tracking-widest font-medium hover:text-[#d1cabd] transition-colors">{link.label}</a>
+                <Link href={link.href} prefetch={true} className="uppercase text-[10px] md:text-xs tracking-widest font-medium hover:text-[#d1cabd] transition-colors">{link.label}</Link>
               </li>
             ))}
           </ul>

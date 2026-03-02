@@ -59,7 +59,7 @@ function Navbar() {
     >
       <div className="max-w-screen-2xl mx-auto md:mx-10 flex items-center px-2" style={{ minHeight: '80px' }}>
         {/* Logo left */}
-        <Link href="/" className="font-quentin text-xl tracking-tight text-gray-900 flex-shrink-0">
+        <Link href="/" prefetch={true} className="font-quentin text-xl tracking-tight text-gray-900 flex-shrink-0">
           <Image src="/favicon.ico" alt="KLCI Logo" width={82} height={82} className="mr-2" />
         </Link>
 
@@ -68,12 +68,13 @@ function Navbar() {
           <ul className="hidden lg:flex gap-10 items-center">
             {mainLinks.map((link) => (
               <li key={link.label}>
-                <a
+                <Link
                   href={link.href}
+                  prefetch={true}
                   className={`text-base  uppercase tracking-wide font-medium transition-colors ${scrolled ? 'text-gray-900 hover:text-[#d1cabd]' : 'text-black hover:opacity-70'}`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -118,7 +119,7 @@ function Navbar() {
         style={{ fontFamily: 'var(--font-euclid-regular)' }}
       >
         <div className="mb-8 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-2xl font-euclid-semibold tracking-wide"></Link>
+          <Link href="/" prefetch={true} className="font-semibold text-2xl font-euclid-semibold tracking-wide"></Link>
           <button onClick={() => setMenuOpen(false)} className="w-10 h-10 flex items-center justify-center relative group focus:outline-none">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line x1="6" y1="6" x2="26" y2="26" stroke="#222" strokeWidth="2" strokeLinecap="round"/>
@@ -129,9 +130,10 @@ function Navbar() {
         {/* Main big links */}
         <div className="flex flex-col gap-3 mb-12">
           {mainMenuLinks.map(link => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
+              prefetch={true}
               className="block text-4xl font-serif text-gray-900 py-1 px-1 transition-all duration-200 group"
               style={{ fontFamily: 'var(--font-meno, serif)' }}
               onClick={() => setMenuOpen(false)}
@@ -140,7 +142,7 @@ function Navbar() {
                 {link.label}
                 <span className="absolute left-0 right-0 -bottom-1 h-[3px] bg-gray-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
         <hr className="my-4 border-gray-300" />

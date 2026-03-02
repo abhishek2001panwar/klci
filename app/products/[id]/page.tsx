@@ -1,4 +1,5 @@
 import { PRODUCTS } from "@/lib/product";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -13,9 +14,9 @@ export default async function Page({ params }: Props) {
       <div className="min-h-screen flex items-center justify-center bg-[#f9f7f3]">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">Product not found</h1>
-          <a href="/products" className="text-sm uppercase tracking-[0.2em] underline hover:no-underline">
+          <Link href="/products" prefetch={true} className="text-sm uppercase tracking-[0.2em] underline hover:no-underline">
             Back to Products
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -70,12 +71,13 @@ export default async function Page({ params }: Props) {
               {/* CTA Section */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 
-                <a 
+                <Link 
                   href="/contact" 
+                  prefetch={true}
                   className="font-medium text-xs md:text-sm tracking-[0.2em] uppercase text-gray-700 hover:text-black transition-colors duration-300 underline underline-offset-4"
                 >
                   GET IN TOUCH
-                </a>
+                </Link>
               </div>
 
               {/* Additional Info */}
@@ -107,13 +109,14 @@ export default async function Page({ params }: Props) {
       {/* Bottom Navigation */}
       <div className="border-t border-[#e5e1da] ">
         <div className="max-w-7xl mx-auto px-4 md:px-16 py-8">
-          <a 
+          <Link 
             href="/products" 
+            prefetch={true}
             className="inline-flex items-center gap-2 font-medium text-xs tracking-[0.2em] uppercase text-gray-700 hover:text-black transition-colors duration-300"
           >
             <span>←</span>
             <span>Back to All Products</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

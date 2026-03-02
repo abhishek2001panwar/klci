@@ -8,7 +8,7 @@ export default function PageLoader() {
 
   useEffect(() => {
     // Simulate loading progress - faster timing
-    const duration = 400; // 0.8 seconds (reduced from 2 seconds)
+    const duration = 800; // 0.8 seconds (reduced from 2 seconds)
     const interval = 20; // Update every 20ms
     const steps = duration / interval;
     const increment = 100 / steps;

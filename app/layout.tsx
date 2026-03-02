@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/sections/Footer";
 import PageLoader from "./components/PageLoader";
+import RouteLoader from "./components/RouteLoader";
 
 
 
@@ -59,6 +60,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         <PageLoader />
+        <RouteLoader />
         <Navbar />
         {children}
         <Footer />
