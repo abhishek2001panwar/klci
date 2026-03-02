@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 
-const scaleImage = "/env.mp4"; // Place your image in public/scale.avif
+const scaleImage = "https://video.wixstatic.com/video/013b16_1a6010c75af44fb1b360501552bdaa80/1080p/mp4/file.mp4"; // Place your image in public/scale.avif
 
 
 const Scale: React.FC = () => {

@@ -1,21 +1,25 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 const products = [
   {
+    id: 1,
     name: "IRON ORE",
     image: "/product1.avif",
     desc:
       "Iron Ore is usually found in the form of Magnatite, Hematite, Geothite, Limonite or Sederite. Of the aforementioned Ore types, Hematite and Magnatite are the most commonly found Ores in India. Hematite is characterised with red rust-like streaks and is often found in banded iron formations. It is further sub-divided into three major types of Ores: Lumps, Fines and C-Ore.",
   },
   {
+    id: 2,
     name: "RED OCHRE",
     image: "/product2.avif",
     desc:
       "Ochre is a naturally occurring clay earth pigment made up of different proportions of clay and sand and ferric oxide. Red ochre is a type of ochre with a reddish colour that contains a lot of hematite, or dehydrated iron oxide. Red ochre is used widely as a raw material in paint and cement industries.",
   },
   {
+    id: 3,
     name: "MANGANESE ORE",
     image: "/product3.avif",
     desc:
@@ -26,6 +30,8 @@ const products = [
 const ProductCard: React.FC<{ product: typeof products[0] }> = ({ product }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,23 +62,41 @@ const ProductCard: React.FC<{ product: typeof products[0] }> = ({ product }) => 
       {/* Name with dot before, below image, left-aligned, different font */}
       <div className="flex items-center gap-1 mt-6 mb-2">
         <span className="inline-block w-2 h-2 rounded-full bg-gray-800"></span>
-        <span className="font-light text-xl md:text-sm text-gray-900 uppercase tracking-widest">{product.name}</span>
+        <span className="font-light text-base md:text-sm text-gray-900 uppercase tracking-widest">
+          {product.name}
+        </span>
       </div>
       {/* Smaller, left-aligned Learn More button */}
-      <Button variant="solid" className="font-regular tracking-widest text-xs px-2 py-1 mt-1">Learn More</Button>
+      <Button 
+        onClick={() => router.push(`/products/${product.id}`)} 
+        variant="solid" 
+        className="font-regular tracking-widest text-xs md:text-sm px-4 md:px-6 py-2 mt-1"
+      >
+        Learn More
+      </Button>
     </div>
   );
 };
 
 const Product: React.FC = () => {
+  const router = useRouter();
+  
   return (
-    <section className="w-full bg-[#f9f7f3] py-16 md:py-24 px-2 md:px-8">
-      <div className="max-w-8xl mx-10">
-        <div className="mb-10">
-          <h2 className="font-meno text-2xl md:text-4xl text-gray-900 tracking-widest uppercase text-left">Products</h2>
-          <div className="border-b-2 border-[#e5e1da] w-24 mt-2"></div>
+    <section className="w-full bg-[#f9f7f3] py-16 md:py-24 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-8 md:mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-4 sm:gap-0">
+          <h2 className="font-meno text-3xl md:text-4xl text-gray-900 tracking-widest uppercase text-left">
+            Products
+          </h2>
+          <Button 
+            onClick={() => router.push('/products')} 
+            variant="outline" 
+            className="px-6 md:px-8 py-2 md:py-3 text-xs md:text-sm font-semibold whitespace-nowrap"
+          >
+            View All
+          </Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {products.map((product, idx) => (
             <ProductCard key={idx} product={product} />
           ))}

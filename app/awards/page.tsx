@@ -11,66 +11,20 @@ interface Award {
 }
 
 const awards: Award[] = [
-  {
-    id: 1,
-    title: 'Environmental Excellence Award',
-    year: '2024',
-    category: 'Sustainability',
-    image: '/env.avif',
-  },
-  {
-    id: 2,
-    title: 'Innovation in Mining',
-    year: '2024',
-    category: 'Technology',
-    image: '/env1.avif',
-  },
-  {
-    id: 3,
-    title: 'Community Impact Award',
-    year: '2023',
-    category: 'Social Responsibility',
-    image: '/env2.avif',
-  },
-  {
-    id: 4,
-    title: 'Safety Excellence',
-    year: '2023',
-    category: 'Workplace Safety',
-    image: '/environment.avif',
-  },
-  {
-    id: 5,
-    title: 'Quality Leadership',
-    year: '2023',
-    category: 'Product Quality',
-    image: '/about.avif',
-  },
-  {
-    id: 6,
-    title: 'Industry Leader Award',
-    year: '2022',
-    category: 'Business Excellence',
-    image: '/about1.avif',
-  },
-  {
-    id: 7,
-    title: 'Green Mining Award',
-    year: '2022',
-    category: 'Environment',
-    image: '/intro1.avif',
-  },
-  {
-    id: 8,
-    title: 'Export Excellence',
-    year: '2022',
-    category: 'International Trade',
-    image: '/intro2.avif',
-  },
+  { id: 1, title: 'Directorate General of Mines Award', year: '2023-24', category: 'Sustainability', image: '/awards/award1.avif' },
+  { id: 2, title: 'Me & Mc', year: '2021-22', category: 'Technology', image: '/awards/award2.avif' },
+  { id: 3, title: 'Awards conferred by MEMC', year: '2021-22', category: 'Social Responsibility', image: '/awards/award3.avif' },
+  { id: 4, title: 'Awards conferred by MEMC', year: '2021-22', category: 'Workplace Safety', image: '/awards/award4.avif' },
+  { id: 5, title: 'Awards conferred by MEMC', year: '2021-22', category: 'Product Quality', image: '/awards/award5.avif' },
+  { id: 6, title: 'Awards conferred by MEMC', year: '2022-23', category: 'Business Excellence', image: '/awards/award6.avif' },
+  { id: 7, title: 'Awards conferred by MEMC', year: '2023-24', category: 'Environment', image: '/awards/award7.avif' },
+  { id: 8, title: 'Certificate of Appreciation', year: '2024-25', category: 'International Trade', image: '/awards/award8.avif' },
+  { id: 9, title: 'Awards conferred by MEMC', year: '2024-25', category: 'International Trade', image: '/awards/award9.avif' },
 ];
 
 function AwardCard({ award, index }: { award: Award; index: number }) {
-  const [scale, setScale] = useState(0.94);
+  // imgScale: 0.75 when far from viewport center → 1.0 when centered
+  const [imgScale, setImgScale] = useState(0.75);
   const itemRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,9 +35,9 @@ function AwardCard({ award, index }: { award: Award; index: number }) {
         const itemCenter = rect.top + rect.height / 2;
         const windowCenter = windowHeight / 2;
         const distance = Math.abs(itemCenter - windowCenter);
-        const maxDistance = windowHeight * 0.7;
-        const scaleValue = Math.max(0.92, Math.min(1, 1 - (distance / maxDistance) * 0.08));
-        setScale(scaleValue);
+        const maxDistance = windowHeight * 0.75;
+        const scaleValue = Math.max(0.75, Math.min(1, 1 - (distance / maxDistance) * 0.25));
+        setImgScale(scaleValue);
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -93,156 +47,96 @@ function AwardCard({ award, index }: { award: Award; index: number }) {
 
   const isLeft = index % 2 === 0;
 
-  const textBlock = (
-    <div style={{
-      padding: isLeft ? '0 60px 0 20px' : '0 20px 0 60px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-    }}>
-      <p style={{
-        fontSize: '11px',
-        letterSpacing: '0.35em',
-        textTransform: 'uppercase',
-        color: '#9a8c7a',
-        marginBottom: '16px',
-        fontWeight: 400,
-      }}>
-        {award.category}
-      </p>
-      <h2 className='font-quentin' style={{
-        fontSize: 'clamp(28px, 3.5vw, 48px)',
-        fontWeight: 500,
-        lineHeight: 1.15,
-        color: '#1a1a18',
-        marginBottom: '24px',
-       
-    
-      }}>
-        {award.title}
-      </h2>
-      <div style={{
-        width: '40px',
-        height: '1px',
-        background: '#c4a882',
-        marginBottom: '24px',
-      }} />
-     
-    </div>
-  );
+  return (
+    <div ref={itemRef} className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 md:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
 
-  const imageBlock = (
-    /* Outer border frame with padding — the whole frame scales on scroll */
-    <div style={{
-      border: '1px solid #d6cfc4',
-      padding: '12px',
-      background: '#f7f4ef',
-      boxShadow: '0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06)',
-      transform: `scale(${scale})`,
-      transition: 'transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-    }}>
-      {/* Inner clip — image is clipped here */}
-      <div style={{
-        position: 'relative',
-        overflow: 'hidden',
-        aspectRatio: '4/3',
-      }}>
-        {/* Award number tag */}
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 10,
-          background: 'rgba(247,244,239,0.92)',
-          padding: '6px 12px',
-          backdropFilter: 'blur(6px)',
-        }}>
-          <span style={{
-            fontSize: '11px',
-            letterSpacing: '0.3em',
-            color: '#1a1a18',
-            fontWeight: 400,
-          }}>
-            {String(index + 1).padStart(2, '0')}
-          </span>
+        {/* Text Block */}
+        <div className={`flex flex-col gap-6 md:gap-8 ${isLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+          <div className="flex flex-col gap-2">
+            <p className="font-medium text-[10px] md:text-xs tracking-[0.25em] md:tracking-[0.35em] uppercase text-gray-600">
+              {award.category}
+            </p>
+            <div className="border-b border-[#e5e1da] w-16 md:w-20" />
+          </div>
+
+          <h2 className="font-quentin text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">
+            {award.title}
+          </h2>
+
+          <div className="w-10 h-px bg-[#c4a882]" />
+
+          <p className="text-sm md:text-base text-gray-900 font-medium">
+            {award.year}
+          </p>
         </div>
 
-        {/* Image with subtle hover zoom */}
-        <img
-          src={award.image}
-          alt={award.title}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            display: 'block',
-            transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-          }}
-          onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
-          onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
-          loading="lazy"
-        />
+        {/* Image Block — container is ALWAYS full width & fixed height, never scales */}
+        <div className={`relative w-full ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}>
 
-        {/* Gradient overlay only — no text */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(to top, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.25) 45%, transparent 72%)',
-          pointerEvents: 'none',
-        }} />
+          {/* Static border frame — always full size */}
+          <div
+            className="absolute border border-[#e5e1da] z-10 pointer-events-none"
+            style={{ inset: '-8px' }}
+          />
+
+          {/* Fixed container — clips the scaling image inside */}
+          <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden bg-[#f0ede8]">
+
+            {/* Award number tag */}
+            <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1.5">
+              <span className="text-[11px] tracking-[0.3em] text-gray-900 font-medium">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+            </div>
+
+            {/* Only the IMAGE scales — container stays full width */}
+            <img
+            className='object-contain'
+              src={award.image}
+              alt={award.title}
+              loading="lazy"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                transform: `scale(${imgScale})`,
+                transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                transformOrigin: 'center center',
+              }}
+            />
+
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+          </div>
+        </div>
+
       </div>
-    </div>
-  );
-
-  return (
-    <div
-      ref={itemRef}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '0',
-        maxWidth: '1200px',
-        margin: '0 auto 100px auto',
-        padding: '0 40px',
-        alignItems: 'center',
-      }}
-    >
-      {isLeft ? textBlock : imageBlock}
-      {isLeft ? imageBlock : textBlock}
     </div>
   );
 }
 
 export default function AwardsPage() {
   return (
-    <>
-
-      <div className="awards-page bg-[#f9f7f3]">
-        <div className="awards-header">
-          <p style={{
-            fontSize: '11px',
-            letterSpacing: '0.4em',
-            textTransform: 'uppercase',
-            color: '#9a8c7a',
-            marginBottom: '20px',
-          }}>
+    <div className="w-full bg-[#f9f7f3]">
+      {/* Hero Section */}
+      <section className="min-h-[40vh] flex items-center justify-center bg-[#f9f7f3] pt-24 md:pt-28 pb-12 px-4 md:px-8">
+        <div className="max-w-7xl w-full text-center">
+          <p className="font-medium text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-gray-600 mb-6 md:mb-8">
             Recognition & Achievements
           </p>
-          <h1 className='font-meno' style={{
-            fontSize: 'clamp(48px, 7vw, 96px)',
-            fontWeight: 300,
-            color: '#1a1a18',
-            lineHeight: 1,
-            letterSpacing: '-0.02em',
-          }}>
+          <h1 className="font-meno text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 leading-tight">
             OUR AWARDS
           </h1>
         </div>
+      </section>
 
+      {/* Awards List */}
+      <div className="py-8 md:py-12">
         {awards.map((award, index) => (
           <AwardCard key={award.id} award={award} index={index} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

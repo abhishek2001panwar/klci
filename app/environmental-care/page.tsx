@@ -100,7 +100,7 @@ function page() {
         autoPlay
         loop
         playsInline
-        src="/env.mp4"
+        src="https://video.wixstatic.com/video/013b16_1a6010c75af44fb1b360501552bdaa80/1080p/mp4/file.mp4"
       />
       {/* Overlay for darkening video if needed */}
       <div className="absolute inset-0 z-10 pointer-events-none">
@@ -144,9 +144,7 @@ function page() {
               <p>
                 KLCI has established a dedicated Sustainability Development Unit to champion the principles outlined in the Sustainable Development Framework for Mines in India. In alignment with this framework, KLCI operates with a strong commitment to social and environmental responsibility.
               </p>
-              <p className="font-medium text-gray-900">
-                The following initiatives reflect KLCI's continuous efforts to foster environmental care:
-              </p>
+             
             </div>
           </div>
 
@@ -184,21 +182,13 @@ function page() {
       </section>
 
       {/* Environmental Initiatives Section */}
-      <section ref={cardsRef} className="w-full bg-white py-16 md:py-24 px-4 md:px-8">
+      <section ref={cardsRef} className="w-full bg-[#f9f7f3]  py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="mb-12 md:mb-16 text-center">
-            <p className="font-medium text-[10px] md:text-xs tracking-[0.25em] uppercase text-gray-600 mb-4">
-              SUSTAINABILITY IN ACTION
-            </p>
-            <h2 className="font-meno text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">
-              Our Environmental<br />
-              <span className="text-[#d1cabd]">Initiatives</span>
-            </h2>
-          </div>
+         
 
           {/* Grid of Initiatives */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {initiatives.map((initiative, index) => (
               <div
                 key={index}

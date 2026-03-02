@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 const mainImage = "/intro1.avif"; // Replace with your image path
 const secondaryImage = "/intro2.avif"; // Replace with your image path
@@ -8,6 +9,7 @@ const secondaryImage = "/intro2.avif"; // Replace with your image path
 export default function Intro() {
   const mainImgRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +65,7 @@ export default function Intro() {
             className="w-full h-48 object-cover rounded-lg border-2 border-[#e5e1da] shadow-md"
           />
           <div className="md:mt-6">
-            <Button variant="outline">Get in Touch</Button>
+            <Button onClick={() => router.push('/contact')} variant="outline">Get in Touch</Button>
           </div>
         </div>
       </div>

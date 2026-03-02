@@ -1,12 +1,14 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 const aboutImage = "/about1.avif"; // Place your about image in public/about.jpg
 
 const About: React.FC = () => {
   const imgRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +45,7 @@ const About: React.FC = () => {
           <p className="font-light text-base md:text-lg text-gray-700 leading-relaxed">
             Karnataka Limpo Cement Industry (KLCI) is a leader in iron-ore, manganese-ore, and red-ochre mining, operating in Tumkur district, Karnataka, India. Since 1987, we have set benchmarks in operational excellence and environmental care, ensuring sustainable growth and community impact.
           </p>
-          <Button variant="outline" className="mt-2 w-max">Learn More</Button>
+          <Button onClick={() => router.push("/about")} variant="outline" className="mt-2 w-max">Learn More</Button>
         </div>
       </div>
     </section>

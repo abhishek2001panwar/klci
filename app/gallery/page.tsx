@@ -38,7 +38,6 @@ export default function GalleryPage() {
           <div className="section-divider">
             <span className="divider-label">Collection</span>
             <span className="divider-line" />
-            <span className="divider-count">{galleryImages.length} images</span>
           </div>
 
           <BentoGallery images={galleryImages} />
@@ -129,7 +128,7 @@ function ParallaxCard({ src, index, onClick }: { src: string; index: number; onC
   return (
     <div
       ref={ref}
-      className={`gallery-card card-${index}`}
+      className={`gallery-card py-32 card-${index}`}
       onClick={onClick}
       role="button"
       tabIndex={0}

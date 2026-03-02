@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 const images = [
   {
@@ -30,6 +31,7 @@ function Env() {
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
 
+const router = useRouter();
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
@@ -43,7 +45,7 @@ function Env() {
     <section
       ref={sectionRef}
       className={`min-h-screen flex flex-col px-4 sm:px-8 lg:px-12 pb-16 transition-all duration-700 ${
-        inView ? "bg-[#111] text-white" : "bg-white text-black"
+        inView ? "bg-[#191918] text-white" : "bg-white text-black"
       }`}
     >
       {/* Top label + View All */}
@@ -61,7 +63,8 @@ function Env() {
         </p>
         <Button 
           variant="outline" 
-          className={inView ? "border-white text-white hover:bg-white hover:text-black" : ""}
+          onClick={() => router.push("/environmental-care")}
+          className={inView ? "border-white text-white " : ""}
         >
           View All
         </Button>
@@ -138,16 +141,7 @@ function Env() {
             </p>
 
             {/* Learn More only on first card */}
-            {img.isMain && (
-              <div className="mt-1.5">
-                <Button 
-                  variant="outline" 
-                  className={inView ? "border-white text-white hover:bg-white hover:text-black" : ""}
-                >
-                  Learn More
-                </Button>
-              </div>
-            )}
+           
           </div>
         ))}
       </div>

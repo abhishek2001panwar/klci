@@ -97,15 +97,15 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom links */}
-      <div className="max-w-7xl mx-auto mx-5 flex flex-wrap justify-between items-center border-t border-white/20 pt-8 pb-6">
-        <div className="flex flex-wrap gap-6 text-[10px] md:text-xs">
+      <div className="max-w-9xl mx-auto mx-5 flex flex-wrap justify-between items-center border-t border-white/20 pt-3 pb-6">
+        {/* <div className="flex flex-wrap gap-6 text-[10px] md:text-xs">
           <a href="/contact" className="hover:underline">CUSTOMER CARE</a>
           <a href="/privacy" className="hover:underline">PRIVACY POLICY</a>
           <a href="/cookies" className="hover:underline">COOKIE POLICY</a>
           <a href="/terms" className="hover:underline">TERMS &amp; CONDITIONS</a>
           <a href="/disclaimer" className="hover:underline">DISCLAIMER</a>
           <a href="/sitemap" className="hover:underline">SITEMAP</a>
-        </div>
+        </div> */}
         <div className="text-white/60 mt-2 md:mt-0 text-[10px] md:text-xs">© 2026 KLCI. ALL RIGHTS RESERVED.</div>
         <div className="font-meno text-[10px] md:text-xs tracking-widest mt-2 md:mt-0 text-white/40">KLCI</div>
       </div>

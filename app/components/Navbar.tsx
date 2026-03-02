@@ -70,7 +70,7 @@ function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`text-base  uppercase tracking-wide font-light transition-colors ${scrolled ? 'text-gray-900 hover:text-blue-700' : 'text-black hover:opacity-70'}`}
+                  className={`text-base  uppercase tracking-wide font-medium transition-colors ${scrolled ? 'text-gray-900 hover:text-[#d1cabd]' : 'text-black hover:opacity-70'}`}
                 >
                   {link.label}
                 </a>
