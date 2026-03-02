@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/sections/Footer";
 
 
+
 export const metadata: Metadata = {
   title: "Karnataka Limpo Cement Industry (KLCI) | Iron Ore, Manganese Ore, Red Ochre Mining Karnataka",
   description: "Karnataka Limpo Cement Industry (KLCI) is a leading mining entity in Tumkur, Karnataka, India. Certified with ISO 14001:2015, 9001:2015 & 45001:2015, KLCI specializes in iron ore, manganese ore, and red ochre mining, maintaining high standards in environmental care, quality, and safety.",
@@ -63,3 +64,4 @@ export default function RootLayout({
     </html>
   );
 }
+

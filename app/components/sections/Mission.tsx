@@ -31,7 +31,7 @@ const Mission: React.FC = () => {
                 <div className="h-px flex-1 bg-[#ddd8cf]" />
               </div>
 
-              <h2 className="font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px] text-[#1a1a1a] tracking-tight leading-none mb-1 uppercase">
+              <h2 className="text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px] text-[#1a1a1a] tracking-tight leading-none mb-1 uppercase">
                 Our
               </h2>
               <h2 className="font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px] text-[#8a7d6b] tracking-tight leading-none mb-5 md:mb-7 uppercase ">
