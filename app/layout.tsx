@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/sections/Footer";
+import PageLoader from "./components/PageLoader";
 
 
 
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <PageLoader />
         <Navbar />
         {children}
         <Footer />
