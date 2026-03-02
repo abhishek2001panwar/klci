@@ -7,8 +7,8 @@ export default function PageLoader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress
-    const duration = 2000; // 2 seconds
+    // Simulate loading progress - faster timing
+    const duration = 800; // 0.8 seconds (reduced from 2 seconds)
     const interval = 20; // Update every 20ms
     const steps = duration / interval;
     const increment = 100 / steps;
@@ -19,10 +19,10 @@ export default function PageLoader() {
       if (currentProgress >= 100) {
         setProgress(100);
         clearInterval(timer);
-        // Small delay before hiding loader
+        // Quick fade before hiding loader
         setTimeout(() => {
           setLoading(false);
-        }, 300);
+        }, 150);
       } else {
         setProgress(Math.floor(currentProgress));
       }
@@ -35,7 +35,7 @@ export default function PageLoader() {
 
   return (
     <div
-      className="fixed inset-0 bg-[#f9f7f3] flex items-center justify-center transition-opacity duration-500"
+      className="fixed inset-0 bg-[#f9f7f3] flex items-center justify-center transition-opacity duration-300"
       style={{ opacity: progress === 100 ? 0 : 1, zIndex: 9999 }}
     >
       <div className="relative flex flex-col items-center gap-8">
