@@ -10,6 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 public/scale.mp4
+public/env.mp4
 
 # testing
 /coverage
