@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -94,6 +96,14 @@ body {
   width: 1px;
   
   
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 
@@ -442,3 +452,5 @@ body {
           .card-10 { grid-column: 2/3; grid-row: 23/26; }
           .card-11 { grid-column: 2/3; grid-row: 26/28; }
         }
+
+        

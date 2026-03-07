@@ -1,7 +1,66 @@
-
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { supabase } from '../../lib/supabase';
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    telephone: '',
+    message: '',
+    marketing: false,
+    privacy: false,
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess('');
+    setError('');
+    if (!form.privacy) {
+      setError('You must agree to the privacy policy.');
+      setLoading(false);
+      return;
+    }
+    const { data, error: supabaseError } = await supabase.from('contact').insert([
+      {
+        first_name: form.first_name,
+        last_name: form.last_name,
+        email: form.email,
+        telephone: form.telephone,
+        message: form.message,
+        marketing: form.marketing,
+        privacy: form.privacy,
+      },
+    ]);
+    if (supabaseError) {
+      setError('Submission failed. Please try again.');
+    } else {
+      setSuccess('Thank you for contacting us!');
+      setForm({
+        first_name: '',
+        last_name: '',
+        email: '',
+        telephone: '',
+        message: '',
+        marketing: false,
+        privacy: false,
+      });
+    }
+    setLoading(false);
+  };
   return (
     <div className="min-h-screen bg-[#f7f4ef] px-6 pt-24 md:px-16 flex flex-col py-4 md:py-10">
       <div className="max-w-8xl w-full mx-auto flex flex-col md:flex-row gap-16 pt-20">
@@ -12,64 +71,48 @@ export default function ContactPage() {
           <p className="text-base md:text-lg text-gray-700 mb-10 max-w-xl">
             If you would like to connect with KLCI regarding our products, environmental initiatives, CSR activities, business partnerships, or general enquiries, please select the appropriate enquiry type and share your details below. Our team will respond at the earliest.
           </p>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-semibold mb-2">FIRST NAME *</label>
-                <input className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="first_name" value={form.first_name} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-2">LAST NAME *</label>
-                <input className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="last_name" value={form.last_name} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-2">EMAIL ADDRESS *</label>
-                <input type="email" className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="email" type="email" value={form.email} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-2">TELEPHONE NUMBER *</label>
-                <input type="tel" className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="telephone" type="tel" value={form.telephone} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
-              <div>
-                <label className="block text-xs font-semibold mb-2">NATURE OF ENQUIRY *</label>
-                <select className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2" required>
-                 <option>General Enquiry</option>
-<option>Product Information</option>
-<option>Business / Supply Enquiry</option>
-<option>Environmental & CSR</option>
-<option>Careers</option>
-<option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold mb-2">HOW DID YOU HEAR ABOUT US?</label>
-                <select className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2">
-                 <option>Website</option>
-<option>Industry Reference</option>
-<option>Social Media</option>
-<option>Word of Mouth</option>
-<option>Other</option>
-                </select>
-              </div>
+            
+            
              
              
             </div>
             <div>
               <label className="block text-xs font-semibold mb-2">MESSAGE *</label>
-              <textarea className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 min-h-[100px]" required placeholder='Please share your query or requirements here…' />
+              <textarea name="message" value={form.message} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 min-h-[100px]" required placeholder='Please share your query or requirements here…' />
             </div>
             <div className="flex flex-col gap-2 mt-4">
               <label className="inline-flex items-center text-xs">
-                <input type="checkbox" className="mr-2" />
+                <input name="marketing" type="checkbox" checked={form.marketing} onChange={handleChange} className="mr-2" />
                 I agree to receive marketing communications.
               </label>
               <label className="inline-flex items-center text-xs">
-                <input type="checkbox" className="mr-2" required />
+                <input name="privacy" type="checkbox" checked={form.privacy} onChange={handleChange} className="mr-2" required />
                 I confirm I have read and understood the <a href="#" className="underline">Privacy Policy</a> &amp; <a href="#" className="underline">Cookie Policy</a> and I agree to the <a href="#" className="underline">Terms</a>.
               </label>
             </div>
-            <button type="submit" className="mt-6 px-8 py-2 bg-black text-white font-semibold tracking-widest text-xs">SEND ENQUIRY</button>
-          </form>
+             {success && <div className="text-green-600 mt-2 text-sm">{success}</div>}
+            {error && <div className="text-red-600 mt-2 text-sm">{error}</div>}
+         
+            <button type="submit" className="mt-6 px-8 py-2 bg-black text-white font-semibold tracking-widest text-xs" disabled={loading}>{loading ? 'SENDING...' : 'SEND ENQUIRY'}</button>
+            </form>
         </div>
         {/* Right: Contact Details */}
         <div className="flex-[1.3] flex flex-col justify-center items-start md:pl-24 mt-12 md:mt-0 max-w-xl w-full">

@@ -9,6 +9,7 @@ import Intro from "./components/sections/Intro";
 import Mission from "./components/sections/Mission";
 import Product from "./components/sections/Product";
 import Scale from "./components/sections/Scale";
+import ContactPage from "./contact/page";
 
 export default function Home() {
   return (
@@ -23,7 +24,8 @@ export default function Home() {
       <Gallery />
       <Env />
       <Mission />
-      <Cta />
+      <ContactPage />
+      {/* <Cta /> */}
       
      
     </div>

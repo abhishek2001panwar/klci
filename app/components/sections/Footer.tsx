@@ -1,8 +1,41 @@
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { supabase } from '../../../lib/supabase';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [agree, setAgree] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess('');
+    setError('');
+    if (!agree) {
+      setError('You must agree to the terms.');
+      setLoading(false);
+      return;
+    }
+    const { data, error: supabaseError } = await supabase.from('enquiry').insert([
+      {
+        email,
+        agree,
+      },
+    ]);
+    if (supabaseError) {
+      setError('Submission failed. Please try again.');
+    } else {
+      setSuccess('Thank you ! We will keep you updated.');
+      setEmail('');
+      setAgree(false);
+    }
+    setLoading(false);
+  };
   return (
     <footer className="w-full bg-black text-white pt-20 pb-10 px-2 md:px-8 font-regular text-xs md:text-sm">
       <div className="max-w-8xl mx-5 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-16 pb-6">
@@ -50,28 +83,34 @@ const Footer = () => {
         <div>
           <h3 className="font-quentin text-2xl md:text-3xl mb-2">Stay Updated</h3>
           <div className="border-t border-white/20 mb-4 w-full" />
-          <form className="flex flex-col gap-3 mt-4">
+          <form className="flex flex-col gap-3 mt-4" onSubmit={handleSubmit}>
             <div className="relative">
-              <input
-                type="email"
-                placeholder="Email address.."
-                className="w-full border border-white bg-black text-white rounded-none font-regular text-lg py-3 px-4 focus:outline-none focus:border-[#d1cabd] transition-colors"
-                style={{ fontFamily: "font-regular, serif" }}
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-xl text-white hover:text-[#d1cabd] bg-transparent border-none cursor-pointer"
-                tabIndex={-1}
-                aria-label="Submit"
-              >
-                <span>&#8250;</span>
-              </button>
+             <input
+  type="email"
+  name="email"
+  value={email}
+  onChange={e => setEmail(e.target.value)}
+  placeholder="Email address.."
+  className="w-full border border-white text-white bg-transparent rounded-none font-regular text-lg py-3 px-4 focus:outline-none focus:border-[#d1cabd] transition-colors"
+  required
+/>
+             <button
+  type="submit"
+  className="absolute right-2 top-1/2 -translate-y-1/2 text-xl text-white hover:text-[#d1cabd] cursor-pointer bg-transparent"
+  aria-label="Submit"
+  disabled={loading}
+>
+  ›
+</button>
             </div>
             <div className="flex items-center gap-3 mt-2">
               <input
                 type="checkbox"
                 className="w-5 h-5 border border-white bg-black focus:ring-0"
                 id="footer-agree"
+                checked={agree}
+                onChange={e => setAgree(e.target.checked)}
+                required
               />
               <label htmlFor="footer-agree" className="font-regular text-xs md:text-sm text-white">
                 I confirm I have read and understood the
@@ -79,6 +118,8 @@ const Footer = () => {
                 <a href="#" className="underline mx-1">Terms</a>.
               </label>
             </div>
+            {success && <div className="text-green-600 mt-2 text-sm">{success}</div>}
+            {error && <div className="text-red-600 mt-2 text-sm">{error}</div>}
           </form>
           {/* Social icons */}
           <div className="flex gap-4 mt-8">
