@@ -75,19 +75,19 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-semibold mb-2">FIRST NAME *</label>
-                <input name="first_name" value={form.first_name} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="first_name" value={form.first_name} onChange={handleChange} className="w-full  border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-2">LAST NAME *</label>
-                <input name="last_name" value={form.last_name} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="last_name" value={form.last_name} onChange={handleChange} className="w-full  border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-2">EMAIL ADDRESS *</label>
-                <input name="email" type="email" value={form.email} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="email" type="email" value={form.email} onChange={handleChange} className="w-full  border border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-2">TELEPHONE NUMBER *</label>
-                <input name="telephone" type="tel" value={form.telephone} onChange={handleChange} className="w-full bg-[#f7f4ef] border border-gray-300 px-4 py-2 focus:outline-none" required />
+                <input name="telephone" type="tel" value={form.telephone} onChange={handleChange} className="w-full  border text-black border-gray-300 px-4 py-2 focus:outline-none" required />
               </div>
             
             
