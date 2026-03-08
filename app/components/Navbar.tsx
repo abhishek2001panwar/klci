@@ -57,10 +57,10 @@ function Navbar() {
           : "bg-transparent border-none"
       }`}
     >
-      <div className="max-w-screen-2xl mx-auto md:mx-10 flex items-center px-2" style={{ minHeight: '80px' }}>
+      <div className="max-w-screen-2xl mx-auto md:mx-10 flex items-center px-2" style={{ minHeight: '90px' }}>
         {/* Logo left */}
         <Link href="/" prefetch={true} className="font-quentin text-xl tracking-tight text-gray-900 flex-shrink-0">
-          <Image src="/favicon.ico" alt="KLCI Logo" width={82} height={82} className="mr-2" />
+          <Image src="/favicon.ico" alt="KLCI Logo" width={90} height={90} className="mr-2" />
         </Link>
 
         {/* Center links (desktop) */}
@@ -71,7 +71,7 @@ function Navbar() {
                 <Link
                   href={link.href}
                   prefetch={true}
-                  className={`text-base  uppercase tracking-wide font-medium transition-colors ${scrolled ? 'text-gray-900 hover:text-[#d1cabd]' : 'text-black hover:opacity-70'}`}
+                  className={`text-base  uppercase tracking-wide font-light transition-colors ${scrolled ? 'text-gray-900 hover:text-[]' : 'text-black hover:opacity-70'}`}
                 >
                   {link.label}
                 </Link>
