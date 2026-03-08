@@ -54,9 +54,9 @@ function AwardCard({ award, index }: { award: Award; index: number }) {
         {/* Text Block */}
         <div className={`flex flex-col gap-6 md:gap-8 ${isLeft ? 'lg:order-1' : 'lg:order-2'}`}>
           <div className="flex flex-col gap-2">
-            <p className="font-medium text-[10px] md:text-xs tracking-[0.25em] md:tracking-[0.35em] uppercase text-gray-600">
+            {/* <p className="font-medium text-[10px] md:text-xs tracking-[0.25em] md:tracking-[0.35em] uppercase text-gray-600">
               {award.category}
-            </p>
+            </p> */}
             <div className="border-b border-[#e5e1da] w-16 md:w-20" />
           </div>
 

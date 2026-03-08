@@ -99,6 +99,8 @@ const Product: React.FC = () => {
             <ProductCard key={idx} product={product} />
           ))}
         </div>
+
+        
       </div>
     </section>
   );

@@ -164,12 +164,12 @@ function Navbar() {
           ))}
         </div>
         {/* Social icons */}
-        <div className="flex gap-6 mt-auto mb-4">
+        {/* <div className="flex gap-6 mt-auto mb-4">
           <a href="#" aria-label="Facebook" className="text-2xl text-gray-900 hover:text-gray-600"><FaFacebookF /></a>
           <a href="#" aria-label="Instagram" className="text-2xl text-gray-900 hover:text-gray-600"><FaInstagram /></a>
           <a href="#" aria-label="TikTok" className="text-2xl text-gray-900 hover:text-gray-600"><FaTiktok /></a>
           <a href="#" aria-label="YouTube" className="text-2xl text-gray-900 hover:text-gray-600"><FaYoutube /></a>
-        </div>
+        </div> */}
       </div>
     </>
   );

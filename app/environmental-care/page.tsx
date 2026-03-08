@@ -3,65 +3,62 @@ import React, { useRef, useEffect, useState } from "react";
 
 const initiatives = [
   {
-    text: "Dust suppression through regular water sprinkling on all internal mine roads",
-    image: "/gallery/gal1.png",
+    text: "Dust Suppression with water sprinklers in all roads within the mines",
+    image: "/env/env1.avif",
   },
   {
-    text: "Continuous ambient air quality monitoring within mining areas",
-    image: "/gallery/gal2.png",
+    text: "Constant Air Quality monitoring within the mines",
+    image: "/env/env2.avif",
   },
   {
-    text: "Routine safety training and safety drills conducted under DGM guidelines",
-    image: "/gallery/gal3.png",
+    text: "DGM Safety Training and Staff Safety Drills performed routinely ",
+    image: "/env/env3.avif",
   },
   {
-    text: "Water trenching in designated safety zones to recharge groundwater levels and prevent surface runoff",
-    image: "/gallery/gal4.png",
+    text: "Water trenching in Safety Zone to rechange ground-water levels and prevent water run-off",
+    image: "/env/env4.avif",
   },
   {
-    text: "Development of green cover at mine heads to reduce soil erosion and improve air quality",
-    image: "/gallery/gal5.png",
+    text: "Solar panels used as renewable energy source",
+    image: "/env/env5.avif",
   },
   {
-    text: "Installation of solar panels as a renewable energy source",
-    image: "/gallery/gal6.png",
+    text: "Calibrated Green energy-efficient generator",
+    image: "/env/env6.avif",
   },
   {
-    text: "Plantation of trees in buffer zones and on inactive dumps",
-    image: "/gallery/gal1.png",
+    text: "Green cover at Mine-head to minimise soil erosion and improve air quality",
+    image: "/env/env7.avif",
   },
   {
-    text: "Use of calibrated, green, energy-efficient generators",
-    image: "/gallery/gal2.png",
+    text: "Plantating of trees in the Buffer-Zone & on Inactive Dumps",
+    image: "/env/env8.avif",
   },
   {
-    text: "Maintenance of an in-house plant nursery to promote indigenous flora",
-    image: "/gallery/gal3.png",
+    text: "In-house plant nursery to promote indigenous flora.",
+    image: "/env/env9.avif",
   },
   {
-    text: "Operation of an in-house chemical analysis unit for quality and compliance testing",
-    image: "/gallery/gal4.png",
+    text: "In-house Chemical Analysis Unit",
+    image: "/env/env10.avif",
   },
   {
-    text: "Construction of toe-walls around inactive dumps to enhance stability and safety",
-    image: "/gallery/gal5.png",
+    text: "Toe-walls constructed in the perimeter of inactive dumps to help with stability & safety.Garland drain constructed to re-direct water run-off from the dumps to a Silt Settling Tank (SST).Porous R&R structure of SST created to help recharge ground-water.",
+    image: "/env/env11.avif",
   },
   {
-    text: "Garland drains built to redirect water runoff from dumps into silt settling tanks (SST)",
-    image: "/gallery/gal6.png",
+    text: "Haul-Road Plantation",
+    image: "/env/env12.avif",
   },
   {
-    text: "Porous R&R structures within SSTs to facilitate groundwater recharge",
-    image: "/gallery/gal1.png",
+    text: "Fully Equipped First-aid Station",
+    image: "/env/env13.avif",
   },
   {
-    text: "Haul-road plantation to control dust and improve the working environment",
-    image: "/gallery/gal2.png",
+    text: "World Environmental Day Celebrations",
+    image: "/env/env14.avif",
   },
-  {
-    text: "Fully equipped first-aid stations available at operational sites",
-    image: "/gallery/gal3.png",
-  },
+ 
 ];
 
 function page() {
@@ -163,7 +160,7 @@ function page() {
             {/* Image container */}
             <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
               <img
-                src="/gallery/gal1.png"
+                src="/env/envheader.avif"
                 alt="Environmental commitment"
                 className="w-full h-full object-cover"
                 style={{
@@ -188,7 +185,7 @@ function page() {
          
 
           {/* Grid of Initiatives */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
             {initiatives.map((initiative, index) => (
               <div
                 key={index}
