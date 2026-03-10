@@ -9,13 +9,21 @@ const mainLinks = [
   { label: "Products", href: "/products" },
   { label: "Environmental Care", href: "/environmental-care" },
   { label: "CSR", href: "/csr" },
+    { label: "Gallery", href: "/gallery" },
+  { label: "Awards", href: "/awards" },
 ];
 
 const mainMenuLinks = [
   { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
   { label: "Gallery", href: "/gallery" },
   { label: "Awards", href: "/awards" },
+   
+ 
+  { label: "CSR", href: "/csr" },
+  
   { label: "Contact", href: "/contact" },
+   { label: "Environmental Care", href: "/environmental-care" },
 ];
 
 
@@ -65,13 +73,13 @@ function Navbar() {
 
         {/* Center links (desktop) */}
         <div className="flex-1 flex justify-center">
-          <ul className="hidden lg:flex gap-10 items-center">
+          <ul className="hidden lg:flex gap-5 items-center">
             {mainLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
                   prefetch={true}
-                  className={`text-base  uppercase tracking-wide font-light transition-colors ${scrolled ? 'text-gray-900 hover:text-[]' : 'text-black hover:opacity-70'}`}
+                  className={`text-base border-b  uppercase tracking-wide font-light transition-colors ${scrolled ? 'text-gray-900 hover:text-[]' : 'text-black hover:opacity-70'}`}
                 >
                   {link.label}
                 </Link>

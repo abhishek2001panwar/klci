@@ -40,7 +40,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="font-quentin text-2xl md:text-3xl mb-2">Quick Links</h3>
+          <h3 className=" text-2xl md:text-3xl mb-2">Quick Links</h3>
           <div className="border-t border-white/20 mb-4 w-full" />
           <ul className="space-y-1 mt-4 py-3">
             {[
@@ -66,7 +66,7 @@ const Footer = () => {
 
         {/* Company */}
         <div>
-          <h3 className="font-quentin text-2xl md:text-3xl mb-2">Company</h3>
+          <h3 className=" text-2xl md:text-3xl mb-2">Company</h3>
           <div className="border-t border-white/20 mb-4 w-full" />
           <ul className="space-y-1 mt-4 py-3">
             {[
@@ -87,7 +87,7 @@ const Footer = () => {
 
         {/* Stay Updated */}
         <div>
-          <h3 className="font-quentin text-2xl md:text-3xl mb-2">Stay Updated</h3>
+          <h3 className=" text-2xl md:text-3xl mb-2">Stay Updated</h3>
           <div className="border-t border-white/20 mb-4 w-full" />
 
           <form className="flex flex-col gap-3 mt-4" onSubmit={handleSubmit}>

@@ -215,7 +215,7 @@ function page() {
 
                 {/* Text content - appears on hover */}
                 <div className="absolute inset-0 flex items-end p-6 md:p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="font-quentin text-lg md:text-xl lg:text-2xl text-white leading-snug transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <p className=" text-lg md:text-xl lg:text-2xl text-white leading-snug transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     {initiative.text}
                   </p>
                 </div>

@@ -45,7 +45,7 @@ function ProductSection({ product, index }: { product: any; index: number }) {
             </p>
             <div className="border-b border-[#e5e1da] w-16 md:w-20" />
           </div>
-          <h2 className="font-quentin font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight">
             {product.title}
           </h2>
           <p className="font-regular text-base md:text-lg text-gray-700 leading-relaxed max-w-xl">

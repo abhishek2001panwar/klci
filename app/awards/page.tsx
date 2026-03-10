@@ -60,7 +60,7 @@ function AwardCard({ award, index }: { award: Award; index: number }) {
             <div className="border-b border-[#e5e1da] w-16 md:w-20" />
           </div>
 
-          <h2 className="font-quentin text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">
+          <h2 className=" text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">
             {award.title}
           </h2>
 

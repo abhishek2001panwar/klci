@@ -47,21 +47,22 @@ export default function Intro() {
         {/* Right: Quote and secondary image */}
         <div className="flex flex-col gap-8">
           <div>
-            <div className="text-xs font-medium tracking-widest uppercase mb-4 text-gray-700 ">
-             RESPONSIBLE MINING. SUSTAINABLE FUTURE.
+            <div className="text-xs font-medium tracking-widest uppercase mb-9 text-gray-700 ">
+              RESPONSIBLE MINING. SUSTAINABLE FUTURE.
             </div>
-            <blockquote className="font-meno text-xl md:text-3xl text-gray-800 italic leading-snug">
+           
+            <p className="font-light text-base md:text-lg text-gray-700 leading-relaxed">
               “KLCI Karnataka Limpo Cement Industry (KLCI) is an iron-ore,
               manganese-ore and red-ochre mining entity, operating in Tumkur
               district of Karnataka, India. We have been in the field of mining
               since circa 1987 and have consistently maintained high operational
-              and environmental care standards”
-            </blockquote>
+              and environmental care standards”{" "}
+            </p>
           </div>
           <img
             src={secondaryImage}
             alt="KLCI Walk"
-            className="w-full h-48 object-cover rounded-lg border-2 border-[#e5e1da] shadow-md"
+            className="w-full h-48 object-cover rounded-lg border-2 mt-5 border-[#e5e1da] shadow-md"
           />
           <div className="md:mt-6">
             <Link href="/contact" prefetch={true}>
