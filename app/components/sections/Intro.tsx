@@ -52,11 +52,11 @@ export default function Intro() {
             </div>
            
             <p className="font-light text-base md:text-lg text-gray-700 leading-relaxed">
-              “KLCI Karnataka Limpo Cement Industry (KLCI) is an iron-ore,
+              KLCI Karnataka Limpo Cement Industry (KLCI) is an iron-ore,
               manganese-ore and red-ochre mining entity, operating in Tumkur
               district of Karnataka, India. We have been in the field of mining
               since circa 1987 and have consistently maintained high operational
-              and environmental care standards”{" "}
+              and environmental care standards{" "}
             </p>
           </div>
           <img
@@ -66,7 +66,7 @@ export default function Intro() {
           />
           <div className="md:mt-6">
             <Link href="/contact" prefetch={true}>
-              <Button variant="outline">Get in Touch</Button>
+              <Button variant="outline">Contact Us</Button>
             </Link>
           </div>
         </div>

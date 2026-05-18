@@ -63,7 +63,7 @@ export default function RootLayout({
         <RouteLoader />
         <Navbar />
         {children}
-        <Footer />
+        
       </body>
     </html>
   );

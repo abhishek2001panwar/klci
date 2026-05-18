@@ -21,7 +21,6 @@ const Mission: React.FC = () => {
           {/* Mission Block */}
           <div className="bg-[#f5f2ec] p-6 md:p-10 lg:p-12 group relative overflow-hidden">
             {/* Large ghost number */}
-            <span className="absolute right-4 top-2 text-[80px] md:text-[120px] font-bold text-[#e8e3da] leading-none select-none pointer-events-none">01</span>
             
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-5 md:mb-7">
@@ -53,7 +52,6 @@ const Mission: React.FC = () => {
           {/* Vision Block */}
           <div className="bg-[#191918] p-6 md:p-10 lg:p-12 group relative overflow-hidden">
             {/* Large ghost number */}
-            <span className="absolute right-4 top-2 text-[80px] md:text-[120px] font-bold text-[#2a2520] leading-none select-none pointer-events-none">02</span>
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-5 md:mb-7">

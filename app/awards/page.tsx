@@ -11,15 +11,18 @@ interface Award {
 }
 
 const awards: Award[] = [
+  { id: 8, title: 'Certificate of Appreciation', year: '2024-25', category: 'International Trade', image: '/awards/award8.avif' },
+  { id: 9, title: 'Awards conferred by MEMC', year: '2024-25', category: 'International Trade', image: '/awards/award9.avif' },
+
   { id: 1, title: 'Directorate General of Mines Award', year: '2023-24', category: 'Sustainability', image: '/awards/award1.avif' },
-  { id: 2, title: 'Me & Mc', year: '2021-22', category: 'Technology', image: '/awards/award2.avif' },
+  { id: 7, title: 'Awards conferred by MEMC', year: '2023-24', category: 'Environment', image: '/awards/award7.avif' },
+
+  { id: 6, title: 'Awards conferred by MEMC', year: '2022-23', category: 'Business Excellence', image: '/awards/award6.avif' },
+
+  { id: 2, title: 'Mines Environment & Mineral Conservation', year: '2021-22', category: 'Technology', image: '/awards/award2.avif' },
   { id: 3, title: 'Awards conferred by MEMC', year: '2021-22', category: 'Social Responsibility', image: '/awards/award3.avif' },
   { id: 4, title: 'Awards conferred by MEMC', year: '2021-22', category: 'Workplace Safety', image: '/awards/award4.avif' },
   { id: 5, title: 'Awards conferred by MEMC', year: '2021-22', category: 'Product Quality', image: '/awards/award5.avif' },
-  { id: 6, title: 'Awards conferred by MEMC', year: '2022-23', category: 'Business Excellence', image: '/awards/award6.avif' },
-  { id: 7, title: 'Awards conferred by MEMC', year: '2023-24', category: 'Environment', image: '/awards/award7.avif' },
-  { id: 8, title: 'Certificate of Appreciation', year: '2024-25', category: 'International Trade', image: '/awards/award8.avif' },
-  { id: 9, title: 'Awards conferred by MEMC', year: '2024-25', category: 'International Trade', image: '/awards/award9.avif' },
 ];
 
 function AwardCard({ award, index }: { award: Award; index: number }) {

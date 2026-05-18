@@ -64,7 +64,7 @@ function Env() {
             variant="outline"
             className={inView ? "border-white text-white " : ""}
           >
-            View All
+           Learn More
           </Button>
         </Link>
       </div>

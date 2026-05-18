@@ -59,7 +59,7 @@ const csrSections = [
   {
     id: 10,
     category: "AWARENESS",
-    description: "Swachata Awareness Program in Surrounding Areas",
+    description: "Swachh Bharath Mission",
     image: "/csr/img10.avif",
   },
 ];

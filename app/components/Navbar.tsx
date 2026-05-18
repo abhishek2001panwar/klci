@@ -6,6 +6,7 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { FaInstagram, FaTiktok, FaYoutube, FaFacebookF } from "react-icons/fa";
 
 const mainLinks = [
+  { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Environmental Care", href: "/environmental-care" },
   { label: "CSR", href: "/csr" },
@@ -89,7 +90,7 @@ function Navbar() {
         </div>
 
         {/* Right: Hamburger for all screens */}
-        <div className="flex-shrink-0 flex items-center ml-2">
+        <div className="flex-shrink-0 flex items-center ml-2 lg:hidden">
           <button
             className="relative w-14 h-14 flex flex-col items-center justify-center group focus:outline-none"
             onClick={() => setMenuOpen((v) => !v)}
