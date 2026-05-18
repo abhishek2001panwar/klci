@@ -14,14 +14,14 @@ const products = [
   {
     id: 2,
     name: "RED OCHRE",
-    image: "/product2.avif",
+    image: "/prod2.jpeg",
     desc:
       "Ochre is a naturally occurring clay earth pigment made up of different proportions of clay and sand and ferric oxide. Red ochre is a type of ochre with a reddish colour that contains a lot of hematite, or dehydrated iron oxide. Red ochre is used widely as a raw material in paint and cement industries.",
   },
   {
     id: 3,
     name: "MANGANESE ORE",
-    image: "/product3.avif",
+    image: "/prod1.png",
     desc:
       "Often occurring alongside Iron ore, Manganese, is too brittle to be useful for structural purposes on its own. However, it is a crucial ingredient in the production of steel because it helps the metal gain valuable physical qualities by removing impurities. The pure metal is utilised in copper and aluminium alloys as well. The main utility of Manganese is in metallurgical applications.",
   },
@@ -46,14 +46,14 @@ const ProductCard: React.FC<{ product: typeof products[0] }> = ({ product }) => 
     <div ref={ref} className="flex flex-col items-start w-full">
       {/* Larger image, no border radius, scales in on scroll */}
       <div
-        className={`w-full h-[440px] md:h-[600px] overflow-hidden flex items-center justify-center gap-10 transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`w-full h-[400px] md:h-[400px] overflow-hidden flex items-center justify-center gap-3 transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
           inView ? "scale-105 opacity-100" : "scale-90 opacity-0"
         }`}
       >
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="w-full h-full object-cover  transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{ borderRadius: 0 }}
         />
       </div>
