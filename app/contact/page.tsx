@@ -74,7 +74,7 @@ export default function ContactPage() {
         {/* Left: Heading and Form */}
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="text-6xl md:text-7xl font-meno mb-6 leading-tight">
-            Get in Touch
+            Contact Us
           </h1>
           <p className="text-base md:text-lg text-gray-700 mb-10 max-w-xl">
             To enquire about our products, kindly submit your details and query
