@@ -9,8 +9,7 @@ export default function ContactPage() {
     email: "",
     telephone: "",
     message: "",
-    marketing: false,
-    privacy: false,
+   
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
@@ -34,11 +33,7 @@ export default function ContactPage() {
     setLoading(true);
     setSuccess("");
     setError("");
-    if (!form.privacy) {
-      setError("You must agree to the privacy policy.");
-      setLoading(false);
-      return;
-    }
+   
     const { data, error: supabaseError } = await supabase
       .from("contact")
       .insert([
@@ -48,8 +43,7 @@ export default function ContactPage() {
           email: form.email,
           telephone: form.telephone,
           message: form.message,
-          marketing: form.marketing,
-          privacy: form.privacy,
+         
         },
       ]);
     if (supabaseError) {
@@ -62,8 +56,7 @@ export default function ContactPage() {
         email: "",
         telephone: "",
         message: "",
-        marketing: false,
-        privacy: false,
+       
       });
     }
     setLoading(false);
