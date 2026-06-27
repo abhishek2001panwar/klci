@@ -57,12 +57,7 @@ const initiatives = [
   {
     text: "World Environmental Day Celebrations",
     image: "/env/env14.avif",
-  },
-   {
-    text: "Sustainable Development Unit",
-    image: "/env/env15.jpg",
-  },
-
+  }
  
 ];
 
@@ -230,6 +225,38 @@ function page() {
               </div>
             ))}
           </div>
+          
+           <div
+                key={"last-card"}
+                className="mt-10 p-10 group relative h-[400px] md:h-[600px] overflow-hidden cursor-pointer"
+               
+              >
+                {/* Background Image */}
+                <img
+                  src={"/env/env15.jpg"}
+                  alt={`Initiative 15`}
+                  className="absolute inset-0 w-full h-full object-contain transition-transform"
+                />
+
+                {/* Number badge - always visible */}
+                <div className="absolute top-6 left-6 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                  <span className="font-medium text-base text-black">
+                    {String(15).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* Dark overlay - appears on hover */}
+
+                {/* Text content - appears on hover */}
+                <div className="absolute inset-0 flex items-end p-6 md:p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className=" text-lg md:text-xl lg:text-2xl text-black leading-snug transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    {"Sustainable Development Unit"}
+                  </p>
+                </div>
+
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[3px] bg-[#d1cabd] transition-all duration-700 z-30" />
+              </div>
         </div>
       </section>
     </>
