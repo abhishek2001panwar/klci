@@ -189,12 +189,12 @@ export default function ContactPage() {
           </form>
         </div>
         {/* Right: Contact Details */}
-        <div className="flex-[1.3] flex flex-col justify-center items-start md:pl-24 mt-12 md:mt-0 max-w-xl w-full">
+        <div className="flex-[1.3] flex flex-col justify-center items-start md:pl-24 mt-12 md:mt-0 max-w-2xl w-full">
           <div className="flex-[1.3] flex flex-col justify-center items-center md:pl-24 mt-12 md:mt-0 max-w-3xl w-full">
             <div className="w-full h-[420px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
               <iframe
                 title="Karekurchi B, Karnataka Map"
-                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18452798.964479353!2d65.8712473!3d20.8391327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x390c6e2e2e2e2e2e%3A0x0!2zMjnCsDAwJzIyLjQiTiA3N8KwNDUnMTkuMCJF!3m2!1d29.0062336!2d77.7551872!4m5!1s0x3bb01a4c33cba0b3%3A0xe1a417ff3c733d66!2sKarekurchi%20B%2C%20Karnataka%20572114!3m2!1d13.3374502!2d76.7019038!5e0!3m2!1sen!2sin!4v1709210000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15528.633631999059!2d76.7001461992668!3d13.34042052096018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb01a4c33cba0b3%3A0xe1a417ff3c733d66!2sKarekurchi%20B%2C%20Karnataka%20572114!5e0!3m2!1sen!2sin!4v1783670900281!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -255,3 +255,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
