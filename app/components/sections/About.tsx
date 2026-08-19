@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "../Button";
 
-const aboutImage = "/about1.avif"; // Place your about image in public/about.jpg
+const aboutImage = "/about2.jpeg"; // Place your about image in public/about.jpg
 
 const About: React.FC = () => {
   const imgRef = useRef<HTMLDivElement>(null);

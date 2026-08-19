@@ -11,7 +11,7 @@ const initiatives = [
     image: "/env/env2.avif",
   },
   {
-    text: "DGM Safety Training and Staff Safety Drills performed routinely ",
+    text: "DGM Safety Training and Staff Safety Drills performed routinely",
     image: "/env/env3.avif",
   },
   {
@@ -43,7 +43,7 @@ const initiatives = [
     image: "/env/env10.avif",
   },
   {
-    text: "Toe-walls constructed in the perimeter of inactive dumps to help with stability & safety.Garland drain constructed to re-direct water run-off from the dumps to a Silt Settling Tank (SST).Porous R&R structure of SST created to help recharge ground-water.",
+    text: "Toe-walls constructed in the perimeter of inactive dumps to help with stability & safety. Garland drain constructed to re-direct water run-off from the dumps to a Silt Settling Tank (SST). Porous R&R structure of SST created to help recharge ground-water.",
     image: "/env/env11.avif",
   },
   {
@@ -57,11 +57,10 @@ const initiatives = [
   {
     text: "World Environmental Day Celebrations",
     image: "/env/env14.avif",
-  }
- 
+  },
 ];
 
-function page() {
+function Page() {
   const imageRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [imageInView, setImageInView] = useState(false);
@@ -89,40 +88,32 @@ function page() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-screen  flex items-center justify-center overflow-hidden">
-      {/* Responsive Video Background */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover object-center z-0"
-        muted
-        autoPlay
-        loop
-        playsInline
-        src="https://video.wixstatic.com/video/013b16_1a6010c75af44fb1b360501552bdaa80/1080p/mp4/file.mp4"
-      />
-      {/* Overlay for darkening video if needed */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {/* Top black gradient overlay */}
-       
-        {/* Bottom black gradient overlay */}
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        {/* Subtle full overlay for extra depth */}
-        <div className="absolute inset-0 bg-black/20" />
-      </div>
-      {/* Bottom Centered Text Overlay */}
-      <div className="absolute left-0  bottom-20 md:bottom-28 z-20 w-full flex flex-col items-center px-4">
-       <h1 className="text-white text-center text-2xl md:text-4xl lg:text-5xl font-meno font-semibold drop-shadow-lg tracking-wide">
-  Environmental Care & Sustainability
-</h1>
-<p className="text-white text-center text-base md:text-lg lg:text-xl mt-2 font-light drop-shadow-md font-meno">
-  Responsible mining practices committed to environmental protection and long-term ecological balance
-</p>
-      </div>
-    </section>
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          muted
+          autoPlay
+          loop
+          playsInline
+          src="https://video.wixstatic.com/video/013b16_1a6010c75af44fb1b360501552bdaa80/1080p/mp4/file.mp4"
+        />
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+        <div className="absolute left-0 bottom-20 md:bottom-28 z-20 w-full flex flex-col items-center px-4">
+          <h1 className="text-white text-center text-2xl md:text-4xl lg:text-5xl font-meno font-semibold drop-shadow-lg tracking-wide">
+            Environmental Care & Sustainability
+          </h1>
+          <p className="text-white text-center text-base md:text-lg lg:text-xl mt-2 font-light drop-shadow-md font-meno max-w-3xl">
+            Responsible mining practices committed to environmental protection and long-term ecological balance
+          </p>
+        </div>
+      </section>
 
       {/* Environmental Commitment Section */}
       <section className="w-full bg-[#f9f7f3] py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Left: Content */}
           <div className="flex flex-col gap-6 md:gap-8">
             <div className="flex flex-col gap-2">
               <div className="border-b border-[#e5e1da] w-16 md:w-20" />
@@ -141,15 +132,12 @@ function page() {
               <p>
                 KLCI has established a dedicated Sustainability Development Unit to champion the principles outlined in the Sustainable Development Framework for Mines in India. In alignment with this framework, KLCI operates with a strong commitment to social and environmental responsibility.
               </p>
-             
             </div>
           </div>
 
-          {/* Right: Image with scale animation */}
           <div ref={imageRef} className="relative">
-            {/* Animated border frame */}
             <div
-              className="absolute inset-0 border-2 border-[#e5e1da] z-10 pointer-events-none"
+              className="absolute inset-0 border-2 border-[#e5e1da] rounded-md z-10 pointer-events-none"
               style={{
                 opacity: imageInView ? 1 : 0,
                 transform: imageInView ? "scale(1)" : "scale(0.9)",
@@ -157,10 +145,9 @@ function page() {
               }}
             />
 
-            {/* Image container */}
-            <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+            <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-md">
               <img
-                src="/env/envheader.avif"
+                src="/env/envheader.jpeg"
                 alt="Environmental commitment"
                 className="w-full h-full object-cover"
                 style={{
@@ -170,97 +157,78 @@ function page() {
                     "opacity 0.9s ease 0.3s, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s",
                 }}
               />
-
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Environmental Initiatives Section */}
-      <section ref={cardsRef} className="w-full bg-[#f9f7f3]  py-16 md:py-24 px-4 md:px-8">
+      <section ref={cardsRef} className="w-full bg-[#f9f7f3] py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-         
-
           {/* Grid of Initiatives */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {initiatives.map((initiative, index) => (
               <div
                 key={index}
-                className="group relative h-[400px] md:h-[450px] overflow-hidden cursor-pointer"
+                className="flex flex-col gap-4"
                 style={{
                   opacity: cardsInView ? 1 : 0,
                   transform: cardsInView ? "translateY(0)" : "translateY(30px)",
                   transition: `opacity 0.6s ease ${0.1 + index * 0.05}s, transform 0.6s ease ${0.1 + index * 0.05}s`,
                 }}
               >
-                {/* Background Image */}
-                <img
-                  src={initiative.image}
-                  alt={`Initiative ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                {/* Number badge - always visible */}
-                <div className="absolute top-6 left-6 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
-                  <span className="font-medium text-base text-black">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                {/* Image Container with rounded-md and Number Badge */}
+                <div className="relative w-full h-[280px] sm:h-[340px] md:h-[380px] overflow-hidden rounded-md shadow-sm">
+                  <img
+                    src={initiative.image}
+                    alt={`Initiative ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                    <span className="font-semibold text-sm text-gray-900">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Dark overlay - appears on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-
-                {/* Text content - appears on hover */}
-                <div className="absolute inset-0 flex items-end p-6 md:p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className=" text-lg md:text-xl lg:text-2xl text-white leading-snug transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    {initiative.text}
-                  </p>
-                </div>
-
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[3px] bg-[#d1cabd] transition-all duration-700 z-30" />
+                {/* Permanent Text Below Image */}
+                <p className="text-gray-800 text-base md:text-lg leading-relaxed font-medium px-1">
+                  {initiative.text}
+                </p>
               </div>
             ))}
           </div>
-          
-           <div
-                key={"last-card"}
-                className="mt-10 p-10 group relative h-[400px] md:h-[600px] overflow-hidden cursor-pointer"
-               
-              >
-                {/* Background Image */}
-                <img
-                  src={"/env/env15.jpg"}
-                  alt={`Initiative 15`}
-                  className="absolute inset-0 w-full h-full object-contain transition-transform"
-                />
 
-                {/* Number badge - always visible */}
-                <div className="absolute top-6 left-6 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
-                  <span className="font-medium text-base text-black">
-                    {String(15).padStart(2, "0")}
-                  </span>
-                </div>
-
-                {/* Dark overlay - appears on hover */}
-
-                {/* Text content - appears on hover */}
-                <div className="absolute inset-0 flex items-end p-6 md:p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className=" text-lg md:text-xl lg:text-2xl text-black leading-snug transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    {"Sustainable Development Unit"}
-                  </p>
-                </div>
-
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[3px] bg-[#d1cabd] transition-all duration-700 z-30" />
+          {/* Last Single Card / SDU */}
+          <div
+            className="mt-12 flex flex-col gap-4 max-w-3xl mx-auto"
+            style={{
+              opacity: cardsInView ? 1 : 0,
+              transform: cardsInView ? "translateY(0)" : "translateY(30px)",
+              transition: `opacity 0.6s ease 0.8s, transform 0.6s ease 0.8s`,
+            }}
+          >
+            <div className="relative w-full h-[320px] md:h-[450px] overflow-hidden rounded-md shadow-sm bg-white/50">
+              <img
+                src="/env/env15.jpg"
+                alt="Sustainable Development Unit"
+                className="w-full h-full object-contain"
+              />
+              <div className="absolute top-4 left-4 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                <span className="font-semibold text-sm text-gray-900">
+                  {String(15).padStart(2, "0")}
+                </span>
               </div>
+            </div>
+
+            <p className="text-gray-800 text-lg md:text-xl font-semibold px-1 text-center md:text-left">
+              Sustainable Development Unit
+            </p>
+          </div>
         </div>
       </section>
     </>
   );
 }
 
-export default page;
+export default Page;

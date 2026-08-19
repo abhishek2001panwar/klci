@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "../Button";
 
-const mainImage = "/intro1.avif"; // Replace with your image path
+const mainImage = "/about.jpeg"; // Replace with your image path
 const secondaryImage = "/intro2.avif"; // Replace with your image path
 
 export default function Intro() {
