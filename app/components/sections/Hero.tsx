@@ -1,5 +1,5 @@
 import React from 'react'
-
+// https://video.wixstatic.com/video/013b16_431d151367c048d7939eb784b1f92721/1080p/mp4/file.mp4
 
 function Hero() {
   return (
@@ -11,7 +11,7 @@ function Hero() {
         autoPlay
         loop
         playsInline
-        src="https://video.wixstatic.com/video/013b16_431d151367c048d7939eb784b1f92721/1080p/mp4/file.mp4"
+        src="https://res.cloudinary.com/jqwfs4er/video/upload/v1787199160/IMG_7700.mov"
       />
       {/* Overlay for darkening video if needed */}
       <div className="absolute inset-0 z-10 pointer-events-none">

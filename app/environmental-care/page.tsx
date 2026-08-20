@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 const initiatives = [
   {
     text: "Dust Suppression with water sprinklers in all roads within the mines",
-    image: "/env/env1.avif",
+    image: "/env/envheader.jpeg",
   },
   {
     text: "Constant Air Quality monitoring within the mines",
@@ -12,31 +12,31 @@ const initiatives = [
   },
   {
     text: "DGM Safety Training and Staff Safety Drills performed routinely",
-    image: "/env/env3.avif",
+    image: "/env/env3.JPG",
   },
   {
     text: "Water trenching in Safety Zone to rechange ground-water levels and prevent water run-off",
-    image: "/env/env4.avif",
+    image: "/env/env4.jpeg",
   },
   {
     text: "Solar panels used as renewable energy source",
-    image: "/env/env5.avif",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29sYXIlMjBwYW5uZWx8ZW58MHx8MHx8fDA%3D",
   },
   {
     text: "Calibrated Green energy-efficient generator",
-    image: "/env/env6.avif",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/1/PF/EG/IF/4178802/kirloskar-silent-diesel-generator-1000x1000.jpg",
   },
   {
     text: "Green cover at Mine-head to minimise soil erosion and improve air quality",
-    image: "/env/env7.avif",
+    image: "/env/env7.jpeg",
   },
   {
     text: "Plantating of trees in the Buffer-Zone & on Inactive Dumps",
-    image: "/env/env8.avif",
+    image: "/env/env8.jpeg",
   },
   {
     text: "In-house plant nursery to promote indigenous flora.",
-    image: "/env/env9.avif",
+    image: "/env/env9.jpeg",
   },
   {
     text: "In-house Chemical Analysis Unit",
@@ -44,11 +44,11 @@ const initiatives = [
   },
   {
     text: "Toe-walls constructed in the perimeter of inactive dumps to help with stability & safety. Garland drain constructed to re-direct water run-off from the dumps to a Silt Settling Tank (SST). Porous R&R structure of SST created to help recharge ground-water.",
-    image: "/env/env11.avif",
+    image: "/env/env11.jpeg",
   },
   {
     text: "Haul-Road Plantation",
-    image: "/env/env12.avif",
+    image: "/env/env12.jpeg",
   },
   {
     text: "Fully Equipped First-aid Station",
@@ -56,9 +56,10 @@ const initiatives = [
   },
   {
     text: "World Environmental Day Celebrations",
-    image: "/env/env14.avif",
+    image: "/env/env14.JPG",
   },
 ];
+// https://video.wixstatic.com/video/013b16_1a6010c75af44fb1b360501552bdaa80/1080p/mp4/file.mp4
 
 function Page() {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -95,7 +96,7 @@ function Page() {
           autoPlay
           loop
           playsInline
-          src="https://video.wixstatic.com/video/013b16_1a6010c75af44fb1b360501552bdaa80/1080p/mp4/file.mp4"
+          src="https://res.cloudinary.com/jqwfs4er/video/upload/v1787200989/DJI_20241010125912_0281_D.MP4.mp4"
         />
         <div className="absolute inset-0 z-10 pointer-events-none">
           <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -147,7 +148,7 @@ function Page() {
 
             <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-md">
               <img
-                src="/env/envheader.jpeg"
+                src="/env/envh.jpeg"
                 alt="Environmental commitment"
                 className="w-full h-full object-cover"
                 style={{
