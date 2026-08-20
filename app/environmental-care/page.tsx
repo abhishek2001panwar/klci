@@ -8,7 +8,7 @@ const initiatives = [
   },
   {
     text: "Constant Air Quality monitoring within the mines",
-    image: "/env/env2.avif",
+    image: "https://cpimg.tistatic.com/12498070/b/5/PM-10-Sampler-EI-142-BL-Respirable-Dust-Sampler.png",
   },
   {
     text: "DGM Safety Training and Staff Safety Drills performed routinely",
