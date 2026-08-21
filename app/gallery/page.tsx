@@ -27,7 +27,7 @@ const generalImages: GalleryItem[] = [
 ];
 
 /* ─────────────── 2. Mines Safety Week Event Images (Original 30 Images) ─────────────── */
-const eventImages: GalleryItem[] = Array.from({ length: 30 }, (_, index) => {
+const eventImages: GalleryItem[] = Array.from({ length: 32 }, (_, index) => {
   const num = index + 1;
   const orientation: ImageOrientation =
     num % 5 === 0 ? 'wide' : num % 3 === 0 ? 'portrait' : 'landscape';
@@ -54,8 +54,6 @@ export default function GalleryPage() {
       <div className="max-w-[1500px] mx-auto space-y-28">
         {/* Section 1: General Collection (Editorial Showcase) */}
         <section>
-         
-
           <GeneralEditorialGrid items={generalImages} />
         </section>
 
@@ -201,7 +199,7 @@ function EventBentoGallery({ items }: { items: GalleryItem[] }) {
   );
 }
 
-/* ─────────────── Reusable Clean Image Card ─────────────── */
+/* ─────────────── High-Performance Parallax Card ─────────────── */
 function CleanImageCard({
   item,
   index,
@@ -211,39 +209,71 @@ function CleanImageCard({
   index: number;
   onClick: () => void;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+    const img = imgRef.current;
+    if (!container || !img) return;
+
+    let isVisible = false;
+    let rafId: number | null = null;
     const speed = 0.03 + (index % 3) * 0.01;
 
-    const onScroll = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
+    // 1. Only calculate parallax when card is visible on screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) updateParallax();
+      },
+      { rootMargin: '100px 0px' }
+    );
+    observer.observe(container);
+
+    // 2. Direct GPU transform without triggering React state updates
+    const updateParallax = () => {
+      if (!isVisible || !container || !img) return;
+      const rect = container.getBoundingClientRect();
       const progress = window.innerHeight / 2 - rect.top - rect.height / 2;
-      setOffset(progress * speed);
+      const offset = progress * speed;
+      img.style.transform = `scale3d(1.12, 1.12, 1) translate3d(0, ${offset.toFixed(2)}px, 0)`;
+    };
+
+    // 3. Throttle scroll calculations using requestAnimationFrame
+    const onScroll = () => {
+      if (!isVisible) return;
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateParallax);
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
+    updateParallax();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [index]);
 
   return (
     <div
-      ref={ref}
-      className="group relative w-full h-full overflow-hidden rounded-md bg-neutral-100 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200/80"
+      ref={containerRef}
+      className="group relative w-full h-full overflow-hidden rounded-md bg-neutral-100 cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300 border border-neutral-200/80"
       onClick={onClick}
       role="button"
       tabIndex={0}
       onKeyDown={e => e.key === 'Enter' && onClick()}
     >
       <img
+        ref={imgRef}
         src={item.src}
         alt={item.alt}
-        className="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
-        style={{ transform: `scale(1.12) translateY(${offset}px)` }}
+        className="w-full h-full object-cover will-change-transform group-hover:scale-105 transition-[transform] duration-500 ease-out"
+        style={{ transform: 'scale3d(1.12, 1.12, 1) translate3d(0, 0, 0)' }}
         loading="lazy"
+        decoding="async"
       />
     </div>
   );
